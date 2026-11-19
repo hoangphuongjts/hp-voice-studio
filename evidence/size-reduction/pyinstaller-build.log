@@ -1,0 +1,7 @@
+262 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.10
+263 INFO: Python: 3.12.3
+266 INFO: Platform: Linux-7.0.0-44-generic-x86_64-with-glibc2.39
+267 INFO: Python environment: /home/hatch/workspace/hp-voice-studio/.venv
+276 INFO: Removing temporary files and cleaning cache in /home/hatch/.cache/pyinstaller
+790 WARNING: Failed to collect submodules for 'onnxruntime.quantization' because importing 'onnxruntime.quantization' raised: ModuleNotFoundError: No module named 'onnx'
+ERROR: script '/home/hatch/workspace/src/hpvoice/shell.py' not found

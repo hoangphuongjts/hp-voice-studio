@@ -1,0 +1,309 @@
+103 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.10
+104 INFO: Python: 3.12.3
+107 INFO: Platform: Linux-7.0.0-44-generic-x86_64-with-glibc2.39
+107 INFO: Python environment: /home/hatch/workspace/hp-voice-studio/.venv
+109 INFO: Removing temporary files and cleaning cache in /home/hatch/.cache/pyinstaller
+583 WARNING: Failed to collect submodules for 'onnxruntime.quantization' because importing 'onnxruntime.quantization' raised: ModuleNotFoundError: No module named 'onnx'
+2884 INFO: Module search paths (PYTHONPATH):
+['/home/hatch/workspace/hp-voice-studio',
+ '/usr/lib/python312.zip',
+ '/usr/lib/python3.12',
+ '/usr/lib/python3.12/lib-dynload',
+ '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages',
+ '/home/hatch/workspace/hp-voice-studio/src']
+3613 INFO: Appending 'datas' from .spec
+3628 INFO: checking Analysis
+3629 INFO: Building Analysis because Analysis-00.toc is non existent
+3629 INFO: Looking for Python shared library...
+3652 INFO: Using Python shared library: /lib/x86_64-linux-gnu/libpython3.12.so.1.0
+3652 INFO: Running Analysis Analysis-00.toc
+3652 INFO: Target bytecode optimization level: 0
+3653 INFO: Initializing module dependency graph...
+3653 INFO: Initializing module graph hook caches...
+3720 INFO: Analyzing modules for base_library.zip ...
+4798 INFO: Processing standard module hook 'hook-encodings.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+5607 INFO: Processing standard module hook 'hook-math.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+7094 INFO: Processing standard module hook 'hook-pickle.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+8598 INFO: Processing standard module hook 'hook-heapq.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+9347 INFO: Caching module dependency graph...
+9438 INFO: Analyzing /home/hatch/workspace/hp-voice-studio/src/hpvoice/shell.py
+9943 INFO: Processing standard module hook 'hook-webview.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/webview/__pyinstaller'
+10033 INFO: Processing standard module hook 'hook-platform.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+10383 INFO: Processing standard module hook 'hook-webbrowser.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+11070 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+11190 INFO: Processing standard module hook 'hook-xml.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+11540 INFO: Processing standard module hook 'hook-_ctypes.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+12227 INFO: Processing standard module hook 'hook-jinja2.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+12252 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+12264 INFO: SetuptoolsInfo: initializing cached setuptools info...
+14378 INFO: Processing pre-safe-import-module hook 'hook-gi.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+14750 INFO: Processing standard module hook 'hook-cryptography.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+15818 INFO: hook-cryptography: cryptography does not seem to be using dynamically linked OpenSSL.
+16960 INFO: Processing standard module hook 'hook-numpy.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+18286 INFO: Processing standard module hook 'hook-sysconfig.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+19908 INFO: Processing standard module hook 'hook-difflib.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+21571 INFO: Processing standard module hook 'hook-charset_normalizer.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+22713 INFO: Processing standard module hook 'hook-urllib3.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+22885 INFO: Processing pre-safe-import-module hook 'hook-backports.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+22885 INFO: Setuptools: 'backports' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.backports'!
+22895 INFO: Processing standard module hook 'hook-setuptools.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+22916 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+22972 INFO: Processing pre-safe-import-module hook 'hook-jaraco.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+22972 INFO: Setuptools: 'jaraco' appears to be a partial setuptools-vendored copy - extending search paths to ['/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/jaraco', '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/setuptools/_vendor/jaraco']!
+22973 INFO: Processing pre-safe-import-module hook 'hook-jaraco.functools.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+22993 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+23212 INFO: Processing standard module hook 'hook-_osx_support.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+23235 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+23683 INFO: Processing pre-safe-import-module hook 'hook-jaraco.text.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+23683 INFO: Setuptools: 'jaraco.text' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco.text'!
+23706 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+23708 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+23708 INFO: Processing pre-safe-import-module hook 'hook-jaraco.context.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+24660 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+24661 INFO: Setuptools: 'tomli' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.tomli'!
+25671 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+25672 INFO: Setuptools: 'wheel' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.wheel'!
+26371 INFO: Processing standard module hook 'hook-certifi.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+26602 INFO: Processing standard module hook 'hook-anyio.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+29420 INFO: Processing standard module hook 'hook-pygments.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+30749 INFO: Processing standard module hook 'hook-rich.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+33262 INFO: Processing standard module hook 'hook-sqlite3.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+34005 INFO: Processing standard module hook 'hook-pydantic.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+35293 INFO: Processing standard module hook 'hook-zoneinfo.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+40132 INFO: Processing standard module hook 'hook-opentelemetry.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+41228 INFO: Processing standard module hook 'hook-fsspec.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+42921 INFO: Processing standard module hook 'hook-soundfile.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+43013 INFO: Processing standard module hook 'hook-onnxruntime.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+43125 INFO: Processing pre-safe-import-module hook 'hook-tensorflow.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/pre_safe_import_module'
+43866 INFO: Processing standard module hook 'hook-uvicorn.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+45009 INFO: Processing standard module hook 'hook-imageio_ffmpeg.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+45151 INFO: Processing standard module hook 'hook-keyring.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+45832 INFO: Processing pre-safe-import-module hook 'hook-importlib_metadata.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+45832 INFO: Setuptools: 'importlib_metadata' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.importlib_metadata'!
+45905 INFO: Processing standard module hook 'hook-setuptools._vendor.importlib_metadata.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+45957 INFO: Processing pre-safe-import-module hook 'hook-zipp.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+45958 INFO: Setuptools: 'zipp' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.zipp'!
+46013 INFO: Analyzing hidden import 'uvicorn.loops'
+46014 INFO: Analyzing hidden import 'uvicorn.loops.auto'
+46018 INFO: Analyzing hidden import 'uvicorn.protocols.http.auto'
+46020 INFO: Analyzing hidden import 'uvicorn.protocols.websockets.auto'
+46022 INFO: Analyzing hidden import 'uvicorn.lifespan'
+46022 INFO: Analyzing hidden import 'uvicorn.lifespan.on'
+46032 INFO: Analyzing hidden import 'httpx'
+47267 INFO: Analyzing hidden import 'clr_loader'
+47267 ERROR: Hidden import 'clr_loader' not found
+47267 INFO: Analyzing hidden import 'fitz'
+48811 INFO: Processing standard module hook 'hook-pymupdf.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+51847 INFO: Analyzing hidden import 'docx'
+51850 INFO: Processing standard module hook 'hook-docx.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+52060 INFO: Processing standard module hook 'hook-lxml.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+52502 INFO: Processing standard module hook 'hook-lxml.etree.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+53199 INFO: Analyzing hidden import 'hpvoice.api.routes_batch'
+53376 INFO: Analyzing hidden import 'hpvoice.api.routes_dialogue'
+53395 INFO: Analyzing hidden import 'hpvoice.api.routes_files'
+53417 INFO: Analyzing hidden import 'hpvoice.api.routes_history'
+53420 INFO: Analyzing hidden import 'hpvoice.api.routes_jobs'
+53426 INFO: Analyzing hidden import 'hpvoice.api.routes_settings'
+53461 INFO: Analyzing hidden import 'hpvoice.api.routes_srt'
+53467 INFO: Analyzing hidden import 'hpvoice.api.routes_tts'
+53495 INFO: Analyzing hidden import 'hpvoice.api.routes_voices'
+53519 INFO: Analyzing hidden import 'keyring.__main__'
+53535 INFO: Analyzing hidden import 'keyring.backends.SecretService'
+53787 INFO: Analyzing hidden import 'keyring.backends.Windows'
+53797 INFO: Analyzing hidden import 'keyring.backends.chainer'
+53801 INFO: Analyzing hidden import 'keyring.backends.kwallet'
+53821 INFO: Analyzing hidden import 'keyring.backends.libsecret'
+53835 INFO: Analyzing hidden import 'keyring.backends.macOS'
+53865 INFO: Analyzing hidden import 'keyring.backends.null'
+53867 INFO: Analyzing hidden import 'keyring.devpi_client'
+54000 INFO: Analyzing hidden import 'keyring.http'
+54002 INFO: Analyzing hidden import 'keyring.testing'
+54003 INFO: Analyzing hidden import 'keyring.testing.backend'
+54023 INFO: Processing standard module hook 'hook-pytest.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+54662 INFO: Processing standard module hook 'hook-py.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+57483 INFO: Analyzing hidden import 'onnxruntime.capi.convert_npz_to_onnx_adapter'
+57490 INFO: Analyzing hidden import 'onnxruntime.capi.libonnxruntime_providers_shared'
+57490 INFO: Analyzing hidden import 'onnxruntime.datasets'
+57495 INFO: Analyzing hidden import 'onnxruntime.tools'
+57509 INFO: Analyzing hidden import 'onnxruntime.tools.check_onnx_model_mobile_usability'
+57570 INFO: Analyzing hidden import 'onnxruntime.tools.convert_onnx_models_to_ort'
+57641 INFO: Analyzing hidden import 'onnxruntime.tools.fpa_intb_tune'
+57662 INFO: Analyzing hidden import 'onnxruntime.tools.make_dynamic_shape_fixed'
+57667 INFO: Analyzing hidden import 'onnxruntime.tools.offline_tuning'
+57679 INFO: Analyzing hidden import 'onnxruntime.tools.onnx_randomizer'
+57684 INFO: Analyzing hidden import 'onnxruntime.tools.onnxruntime_test'
+57708 INFO: Analyzing hidden import 'onnxruntime.tools.optimize_onnx_model'
+57712 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py'
+57712 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs'
+57714 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ArgType'
+57715 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ArgTypeAndIndex'
+57840 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Attribute'
+57859 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.AttributeType'
+57860 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Checkpoint'
+57872 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedKernelCreateInfos'
+57880 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedNodeIndexAndKernelDefHash'
+57884 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedSessionState'
+57889 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedSubGraphSessionState'
+57894 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Dimension'
+57898 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DimensionValue'
+57903 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DimensionValueType'
+57904 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.EdgeEnd'
+57907 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.FloatProperty'
+57911 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Graph'
+57931 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.InferenceSession'
+57936 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.IntProperty'
+57940 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.KernelTypeStrArgsEntry'
+57946 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.KernelTypeStrResolver'
+57954 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.MapType'
+57959 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Model'
+57976 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ModuleState'
+57987 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Node'
+58006 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.NodeEdge'
+58013 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.NodeType'
+58014 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.NodesToOptimizeIndices'
+58024 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.OpIdKernelTypeStrArgsEntry'
+58029 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.OperatorSetId'
+58032 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.OptimizerGroup'
+58038 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ParameterOptimizerState'
+58044 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.PropertyBag'
+58055 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.RuntimeOptimizationRecord'
+58062 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.RuntimeOptimizationRecordContainerEntry'
+58068 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.RuntimeOptimizations'
+58072 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.SequenceType'
+58077 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Shape'
+58082 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.SparseTensor'
+58088 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.StringProperty'
+58092 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.StringStringEntry'
+58096 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Tensor'
+58109 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TensorDataType'
+58110 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TensorTypeAndShape'
+58114 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TypeInfo'
+58119 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TypeInfoValue'
+58120 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ValueInfo'
+58125 INFO: Analyzing hidden import 'onnxruntime.tools.pytorch_export_contrib_ops'
+58134 INFO: Analyzing hidden import 'onnxruntime.tools.qdq_helpers'
+58135 INFO: Analyzing hidden import 'onnxruntime.tools.qdq_helpers.optimize_qdq_model'
+58137 INFO: Analyzing hidden import 'onnxruntime.tools.reduced_build_config_parser'
+58146 INFO: Analyzing hidden import 'onnxruntime.tools.remove_initializer_from_input'
+58148 INFO: Analyzing hidden import 'onnxruntime.tools.symbolic_shape_infer'
+58407 INFO: Analyzing hidden import 'onnxruntime.tools.update_onnx_opset'
+58410 INFO: Analyzing hidden import 'onnxruntime.transformers.affinity_helper'
+58412 INFO: Analyzing hidden import 'onnxruntime.transformers.benchmark'
+58445 INFO: Analyzing hidden import 'onnxruntime.transformers.benchmark_helper'
+58494 INFO: Analyzing hidden import 'onnxruntime.transformers.bert_perf_test'
+58540 INFO: Analyzing hidden import 'onnxruntime.transformers.bert_test_data'
+58570 INFO: Analyzing hidden import 'onnxruntime.transformers.compare_bert_results'
+58582 INFO: Analyzing hidden import 'onnxruntime.transformers.constants'
+58584 INFO: Analyzing hidden import 'onnxruntime.transformers.convert_generation'
+58851 INFO: Analyzing hidden import 'onnxruntime.transformers.convert_tf_models_to_pytorch'
+58871 INFO: Analyzing hidden import 'onnxruntime.transformers.convert_to_packing_mode'
+58894 INFO: Analyzing hidden import 'onnxruntime.transformers.dynamo_onnx_helper'
+58908 INFO: Analyzing hidden import 'onnxruntime.transformers.float16'
+58936 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention'
+58990 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_clip'
+59007 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_sam2'
+59029 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_unet'
+59103 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_vae'
+59125 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_bart_attention'
+59152 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_base'
+59162 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_bias_add'
+59167 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_biasgelu'
+59171 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_biassplitgelu'
+59179 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_conformer_attention'
+59194 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_constant_fold'
+59204 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_embedlayer'
+59238 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_fastgelu'
+59259 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gelu'
+59273 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gelu_approximation'
+59275 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gemmfastgelu'
+59281 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gpt_attention'
+59303 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gpt_attention_megatron'
+59319 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gpt_attention_no_past'
+59332 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_group_norm'
+59342 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_layernorm'
+59366 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_mha_dit'
+59390 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_mha_mmdit'
+59419 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_nhwc_conv'
+59426 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_options'
+59440 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_attention'
+59461 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_gelu'
+59468 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_layernorm'
+59475 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_matmul'
+59485 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_quickgelu'
+59489 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_reshape'
+59499 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_rotary_attention'
+59571 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_shape'
+59577 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_simplified_layernorm'
+59586 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_skip_group_norm'
+59598 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_skiplayernorm'
+59611 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_transpose'
+59622 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_utils'
+59642 INFO: Analyzing hidden import 'onnxruntime.transformers.huggingface_models'
+59645 INFO: Analyzing hidden import 'onnxruntime.transformers.import_utils'
+59647 INFO: Analyzing hidden import 'onnxruntime.transformers.io_binding_helper'
+59674 INFO: Analyzing hidden import 'onnxruntime.transformers.large_model_exporter'
+59696 INFO: Analyzing hidden import 'onnxruntime.transformers.metrics'
+59707 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_exporter'
+59742 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model'
+59821 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bart'
+59832 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bert'
+59860 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bert_keras'
+59883 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bert_tf'
+59910 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_clip'
+59913 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_conformer'
+59916 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_gpt2'
+59921 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_mmdit'
+59938 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_phi'
+59984 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_sam2'
+59994 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_t5'
+60041 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_tnlr'
+60056 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_unet'
+60070 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_vae'
+60073 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_utils'
+60076 INFO: Analyzing hidden import 'onnxruntime.transformers.optimizer'
+60099 INFO: Analyzing hidden import 'onnxruntime.transformers.past_helper'
+60111 INFO: Analyzing hidden import 'onnxruntime.transformers.profile_result_processor'
+60132 INFO: Analyzing hidden import 'onnxruntime.transformers.profiler'
+60148 INFO: Analyzing hidden import 'onnxruntime.transformers.quantize_helper'
+61078 INFO: Analyzing hidden import 'onnxruntime.transformers.shape_infer_helper'
+61088 INFO: Analyzing hidden import 'onnxruntime.transformers.shape_optimizer'
+61112 INFO: Analyzing hidden import 'onnxruntime.transformers.torch_onnx_export_helper'
+61116 INFO: Analyzing hidden import 'tokenizers.tools'
+61135 INFO: Processing module hooks (post-graph stage)...
+62568 INFO: Processing standard module hook 'hook-lxml.isoschematron.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+63054 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+67681 INFO: Processing standard module hook 'hook-lxml.objectify.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+67726 INFO: Performing binary vs. data reclassification (477 entries)
+68040 INFO: Looking for ctypes DLLs
+68343 WARNING: Library ntdll required via ctypes not found
+68664 INFO: Analyzing run-time hooks ...
+68681 INFO: Including run-time hook 'pyi_rth_inspect.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+68688 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+68690 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+68693 INFO: Including run-time hook 'pyi_rth_setuptools.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+68695 INFO: Including run-time hook 'pyi_rth_cryptography_openssl.py' from '/home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/rthooks'
+68765 INFO: Creating base_library.zip...
+68800 INFO: Looking for dynamic libraries
+70788 INFO: Warnings written to /home/hatch/workspace/hp-voice-studio/build/hp-voice-studio/warn-hp-voice-studio.txt
+71051 INFO: Graph cross-reference written to /home/hatch/workspace/hp-voice-studio/build/hp-voice-studio/xref-hp-voice-studio.html
+71199 INFO: checking PYZ
+71199 INFO: Building PYZ because PYZ-00.toc is non existent
+71200 INFO: Building PYZ (ZlibArchive) /home/hatch/workspace/hp-voice-studio/build/hp-voice-studio/PYZ-00.pyz
+74504 INFO: Building PYZ (ZlibArchive) /home/hatch/workspace/hp-voice-studio/build/hp-voice-studio/PYZ-00.pyz completed successfully.
+74575 INFO: checking PKG
+74575 INFO: Building PKG because PKG-00.toc is non existent
+74575 INFO: Building PKG (CArchive) hp-voice-studio.pkg
+74686 INFO: Building PKG (CArchive) hp-voice-studio.pkg completed successfully.
+74687 INFO: Bootloader /home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/PyInstaller/bootloader/Linux-64bit-intel/run
+74687 INFO: checking EXE
+74687 INFO: Building EXE because EXE-00.toc is non existent
+74687 INFO: Building EXE from EXE-00.toc
+74687 INFO: Copying bootloader EXE to /home/hatch/workspace/hp-voice-studio/build/hp-voice-studio/hp-voice-studio
+74695 INFO: Appending PKG archive to custom ELF section in EXE
+74872 INFO: Building EXE from EXE-00.toc completed successfully.
+74880 INFO: checking COLLECT
+74881 INFO: Building COLLECT because COLLECT-00.toc is non existent
+74881 INFO: Removing dir /home/hatch/workspace/hp-voice-studio/dist/hp-voice-studio
+75142 INFO: Building COLLECT COLLECT-00.toc
+77581 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+77606 INFO: Build complete! The results are available in: /home/hatch/workspace/hp-voice-studio/dist

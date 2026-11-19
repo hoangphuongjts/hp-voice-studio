@@ -1,0 +1,6 @@
+PASS import_hpvoice: hpvoice modules imported
+PASS engine_load_25_voices: model loaded, 25 preset voices
+PASS synthesize_preset: 103680 samples @ 48000 Hz
+PASS clone_encode_add_voice: clone voice test-block-clone synthesized 72960 samples
+PASS server_import: hp_api imported
+RESULT: ALL PASS

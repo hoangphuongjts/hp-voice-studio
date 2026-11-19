@@ -1,0 +1,23 @@
+........................................................................ [ 23%]
+...............F......s................................................. [ 46%]
+........................................................................ [ 69%]
+........................................................................ [ 93%]
+.....................                                                    [100%]
+=================================== FAILURES ===================================
+_______________________ test_phat_hien_vnni_tren_vm_nay ________________________
+
+    def test_phat_hien_vnni_tren_vm_nay():
+        """TH-03: VM này có cả AVX-VNNI + AVX512-VNNI (khớp T1-REPORT)."""
+        from hpvoice.engines.cpu_detect import detect_cpu
+    
+        cpu = detect_cpu()
+        assert cpu.model and cpu.model != "không xác định"
+>       assert cpu.has_avx_vnni is True, f"/proc/cpuinfo + py-cpuinfo phải thấy avx_vnni: {cpu}"
+E       AssertionError: /proc/cpuinfo + py-cpuinfo phải thấy avx_vnni: CpuInfo(model='AMD EPYC 9D64 88-Core Processor', has_avx512_vnni=True, has_avx_vnni=False, source='py-cpuinfo+/proc/cpuinfo')
+E       assert False is True
+E        +  where False = CpuInfo(model='AMD EPYC 9D64 88-Core Processor', has_avx512_vnni=True, has_avx_vnni=False, source='py-cpuinfo+/proc/cpuinfo').has_avx_vnni
+
+tests/test_cpu.py:26: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_cpu.py::test_phat_hien_vnni_tren_vm_nay - AssertionError: /...
+1 failed, 307 passed, 1 skipped in 284.03s (0:04:44)
