@@ -1,0 +1,126 @@
+# HP Voice Studio — Build Windows (TK4.1, SPEC §12/§10 T4.1).
+#
+# BLOCKER ĐÃ BIẾT — WORKFLOW NÀY CHƯA CHẠY ĐƯỢC:
+# Repo HP Voice Studio hiện chỉ tồn tại LOCAL (``git remote`` trống — chưa
+# có repo GitHub). Workflow này chỉ chạy được sau khi anh tạo repo GitHub
+# cho HP Voice Studio và push code + tag lên đó. KHÔNG tự tạo repo (cần
+# tài khoản GitHub của anh; xem báo cáo TK4-PACKAGE để biết bước tạo repo).
+# Khi có repo: push tag ``v*`` (VD ``v0.1.0``) hoặc bấm Run workflow tay.
+#
+# Trigger: push tag v* + workflow_dispatch — KHÔNG trigger mọi push
+# (tránh tốn phút runner Windows; SPEC TK4.1(b)).
+#
+# Các bước chính (SPEC TK4.1):
+# (c) Pin Python 3.12 + pip cache + vieneu==3.8.4 + toàn bộ requirements.txt.
+# (d) Collect PyInstaller: keyring/onnxruntime/tokenizers; KHÔNG collect
+#     binary FFmpeg (Q21 — ĐÃ CHỐT 04:35 19/11); model theo Q2 mặc định
+#     TẢI LẦN ĐẦU (không đóng gói kèm model sẵn).
+# (e) Artifact + file .sha256 — người tải kiểm sha256 khớp rồi mới cài.
+# (f) Smoke test trên runner sạch (job riêng, không Python, không repo):
+#     chạy .exe -> T1.2 thu nhỏ (FakeEngine) pass mới cho artifact qua;
+#     fail -> build fail.
+name: Build Windows
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build .exe (PyInstaller, one-dir)
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cài Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Cài dependencies (vieneu==3.8.4 + requirements.txt)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller pywebview
+        shell: pwsh
+
+      - name: Build .exe (one-dir, DesktopShell, ẩn console)
+        run: python scripts/build_windows.py
+        shell: pwsh
+
+      - name: Ghi kích thước dist
+        run: |
+          $size = (Get-ChildItem -Recurse dist/hp-voice-studio | Measure-Object Length -Sum).Sum / 1MB
+          "Kich thuoc dist: $([math]::Round($size, 1)) MB (ngan sach Q2 ~300-400 MB, chua tinh model tai lan dau)"
+          Get-ChildItem dist/hp-voice-studio -Recurse -File | Select-Object FullName, Length | Format-Table -AutoSize | Out-String -Width 200
+        shell: pwsh
+
+      - name: Đăng artifact (.exe one-dir + .sha256)
+        uses: actions/upload-artifact@v4
+        with:
+          name: hp-voice-studio-windows-${{ github.ref_name }}
+          path: |
+            dist/hp-voice-studio
+            dist/hp-voice-studio.sha256
+          if-no-files-found: error
+          retention-days: 30
+
+  smoke-test:
+    name: Smoke test trên runner sạch (T1.2 thu nhỏ)
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - name: Tải artifact (không checkout repo, không cài Python)
+        uses: actions/download-artifact@v4
+        with:
+          name: hp-voice-studio-windows-${{ github.ref_name }}
+          path: app
+
+      - name: Kiểm SHA-256 khớp trước khi chạy
+        run: |
+          $expected = (Get-Content app/hp-voice-studio.sha256 | Where-Object { $_ -match 'hp-voice-studio\.exe$' }) -split '\s+' | Select-Object -First 1
+          $actual = (Get-FileHash app/hp-voice-studio/hp-voice-studio.exe -Algorithm SHA256).Hash.ToLower()
+          if ($expected -ne $actual) { throw "SHA-256 .exe KHONG KHOP: expected=$expected actual=$actual" }
+          "SHA-256 .exe khop."
+        shell: pwsh
+
+      - name: "--version / --check (không nạp model)"
+        run: |
+          .\app\hp-voice-studio\hp-voice-studio.exe --version
+          .\app\hp-voice-studio\hp-voice-studio.exe --check
+        shell: pwsh
+
+      - name: "Smoke test: chạy .exe (FakeEngine) -> /health 200 + TTS ra WAV"
+        run: |
+          $env:HPVOICE_ENGINE = "fake"
+          $proc = Start-Process -FilePath ".\app\hp-voice-studio\hp-voice-studio.exe" -PassThru
+          try {
+            $ok = $false
+            for ($i = 0; $i -lt 60; $i++) {
+              try {
+                # /health trả HTTP 200 là đủ (status "starting" khi engine
+                # FakeEngine chưa load — chỉ engine V3 thật đã load mới "ok").
+                $resp = Invoke-RestMethod -Uri "http://127.0.0.1:8124/health" -TimeoutSec 2
+                $ok = $true; break
+              } catch { Start-Sleep -Seconds 2 }
+            }
+            if (-not $ok) { throw "Smoke test FAIL: /health khong tra HTTP 200 sau 120s" }
+            "GET /health -> HTTP 200."
+            # response_format=wav (mp3 cần FFmpeg — Q21: bộ cài KHÔNG kèm
+            # binary FFmpeg nên smoke test dùng WAV).
+            $body = @{ input = "Xin chao, day la ban kiem thu dong goi."; voice = "Hải Đăng"; response_format = "wav" } | ConvertTo-Json
+            Invoke-RestMethod -Uri "http://127.0.0.1:8124/v1/audio/speech" -Method Post -Body $body -ContentType "application/json" -OutFile smoke.wav
+            if (-not (Test-Path smoke.wav) -or (Get-Item smoke.wav).Length -eq 0) { throw "Smoke test FAIL: TTS khong tra file WAV" }
+            "POST /v1/audio/speech -> WAV $((Get-Item smoke.wav).Length) byte. T1.2 thu nho (FakeEngine) PASS."
+          } finally {
+            if (-not $proc.HasExited) { Stop-Process -Id $proc.Id -Force }
+          }
+        shell: pwsh
