@@ -1,0 +1,202 @@
+/* HP Voice Studio — styles.css (TK3.1/TK3.6).
+ * Full-page, 1 màn hình 1 hành động chính; tiếng Việt; giao diện sáng/tối
+ * theo Cài đặt (data-theme trên <html>). Dropdown giọng không liệt kê dài
+ * ngoài màn hình: select cuộn trong khung, option gọn 1 dòng.
+ */
+:root {
+  --hp-bg: #f7f7f8;
+  --hp-surface: #ffffff;
+  --hp-surface-muted: #efeff1;
+  --hp-text: #1c1c1e;
+  --hp-muted: #5c5c60;
+  --hp-border: #d9d9de;
+  --hp-accent: #c8102e;
+  --hp-accent-soft: #fdecef;
+  --hp-on-accent: #ffffff;
+  --hp-error: #b00020;
+  --hp-error-bg: #fdecea;
+  --hp-focus: #c8102e;
+  --hp-shadow: rgba(0, 0, 0, 0.12);
+}
+html[data-theme="dark"] {
+  --hp-bg: #17181a;
+  --hp-surface: #222326;
+  --hp-surface-muted: #2e2f33;
+  --hp-text: #f2f2f3;
+  --hp-muted: #b0b0b5;
+  --hp-border: #3d3e43;
+  --hp-accent: #e5484d;
+  --hp-accent-soft: #3a1d20;
+  --hp-on-accent: #ffffff;
+  --hp-error: #ff8a80;
+  --hp-error-bg: #3a1d20;
+  --hp-focus: #e5484d;
+  --hp-shadow: rgba(0, 0, 0, 0.45);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--hp-bg);
+  color: var(--hp-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.hp-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: var(--hp-surface);
+  border-bottom: 1px solid var(--hp-border);
+}
+.hp-header h1 { font-size: 20px; margin: 0; color: var(--hp-accent); }
+.hp-header-engine { font-size: 14px; color: var(--hp-muted); }
+#engine-status { font-size: 14px; color: var(--hp-muted); }
+#engine-status[data-ready="false"] { color: var(--hp-error); }
+.hp-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: calc(100vh - 53px);
+}
+#app-nav {
+  background: var(--hp-surface);
+  border-right: 1px solid var(--hp-border);
+  padding: 12px 8px;
+}
+.hp-nav-group { margin-bottom: 16px; }
+.hp-nav-group-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hp-muted);
+  padding: 4px 10px;
+}
+.hp-nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 10px;
+  margin: 2px 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--hp-text);
+  font-size: 15px;
+  cursor: pointer;
+}
+.hp-nav-item:hover { background: var(--hp-surface-muted); }
+.hp-nav-item-active {
+  background: var(--hp-accent-soft);
+  border-color: var(--hp-accent);
+  color: var(--hp-accent);
+  font-weight: 600;
+}
+#tab-content { padding: 16px 20px; max-width: 1100px; }
+#tab-content h2 { font-size: 18px; margin: 0 0 4px; }
+#tab-content h3 { font-size: 16px; margin: 18px 0 6px; }
+.hp-hint { color: var(--hp-muted); font-size: 14px; }
+.hp-error { color: var(--hp-error); background: var(--hp-error-bg);
+  border-radius: 6px; padding: 8px 10px; }
+.hp-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+.hp-panel {
+  border: 1px solid var(--hp-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 10px 0;
+  background: var(--hp-surface);
+}
+.hp-panel h3 { margin-top: 0; }
+label { font-size: 14px; }
+input, select, textarea {
+  font: inherit;
+  color: var(--hp-text);
+  background: var(--hp-surface);
+  border: 1px solid var(--hp-border);
+  border-radius: 6px;
+  padding: 7px 9px;
+}
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--hp-focus);
+  outline-offset: 1px;
+}
+textarea { width: 100%; resize: vertical; }
+/* Dropdown giọng: không liệt kê dài ngoài màn hình — khung select cuộn. */
+select {
+  max-width: 100%;
+  max-height: 240px;
+}
+#studio-voice, #settings-default-voice { min-width: 280px; max-width: 100%; }
+#studio-text { min-height: 120px; }
+button {
+  font: inherit;
+  color: var(--hp-text);
+  background: var(--hp-surface);
+  border: 1px solid var(--hp-border);
+  border-radius: 8px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+button:hover:not(:disabled) { background: var(--hp-surface-muted); }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+.hp-cta {
+  background: var(--hp-accent);
+  border-color: var(--hp-accent);
+  color: var(--hp-on-accent);
+  font-weight: 600;
+}
+.hp-cta:hover:not(:disabled) { background: var(--hp-accent); filter: brightness(1.08); }
+.hp-table { border-collapse: collapse; width: 100%; }
+.hp-table th, .hp-table td {
+  border: 1px solid var(--hp-border);
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+.hp-queue-row {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  padding: 8px 10px;
+  border: 1px solid var(--hp-border);
+  border-radius: 6px;
+  margin: 6px 0;
+  background: var(--hp-surface);
+}
+.hp-mono { font-family: ui-monospace, monospace; word-break: break-all; }
+.hp-virtual-list { border: 1px solid var(--hp-border); border-radius: 6px; }
+#toast-container {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: min(480px, 90vw);
+  z-index: 100;
+}
+.hp-toast {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--hp-border);
+  background: var(--hp-surface);
+  color: var(--hp-text);
+  box-shadow: 0 4px 16px var(--hp-shadow);
+}
+.hp-toast-error { border-color: var(--hp-error); background: var(--hp-error-bg); color: var(--hp-text); }
+.hp-toast-close {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  padding: 0 4px;
+  font-size: 18px;
+  line-height: 1;
+}
+@media (max-width: 720px) {
+  .hp-layout { grid-template-columns: 1fr; }
+  #app-nav { border-right: none; border-bottom: 1px solid var(--hp-border); }
+  .hp-nav-item { width: auto; display: inline-block; }
+}

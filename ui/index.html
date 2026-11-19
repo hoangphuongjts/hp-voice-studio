@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HP Voice Studio</title>
+<link rel="stylesheet" href="/ui/styles.css">
+</head>
+<body>
+<header class="hp-header">
+  <h1 id="app-title">HP Voice Studio</h1>
+  <label class="hp-header-engine">Engine
+    <select id="engine-select" aria-label="Engine mặc định">
+      <option value="v3">V3 local</option>
+      <option value="v4">V4 cloud</option>
+    </select>
+  </label>
+  <span id="engine-status" role="status">Đang kiểm tra trạng thái engine...</span>
+</header>
+<div class="hp-layout">
+  <nav id="app-nav" aria-label="Điều hướng">
+    <div class="hp-nav-group"><div class="hp-nav-group-title">Tạo</div></div>
+    <div class="hp-nav-group"><div class="hp-nav-group-title">Thư viện</div></div>
+    <div class="hp-nav-group"><div class="hp-nav-group-title">Hệ thống</div></div>
+  </nav>
+  <main id="tab-content" aria-live="polite">
+    <p>Đang tải giao diện...</p>
+  </main>
+</div>
+<div id="toast-container" aria-live="assertive"></div>
+<!-- Thứ tự script (TK3.1): api -> player -> virtual-list -> tabs-*.js -> app.js cuối.
+     player.js / virtual-list.js và các tab dialogue/srt/files/batch/history/voices
+     do agent TK3-UI-TABS sở hữu; file nào chưa có thì nav chỉ hiện tab đã đăng ký. -->
+<script src="/ui/api.js"></script>
+<script src="/ui/player.js"></script>
+<script src="/ui/virtual-list.js"></script>
+<script src="/ui/tabs-studio.js"></script>
+<script src="/ui/tabs-dialogue.js"></script>
+<script src="/ui/tabs-srt.js"></script>
+<script src="/ui/tabs-files.js"></script>
+<script src="/ui/tabs-batch.js"></script>
+<script src="/ui/tabs-history.js"></script>
+<script src="/ui/tabs-voices.js"></script>
+<script src="/ui/tabs-settings.js"></script>
+<script src="/ui/app.js"></script>
+</body>
+</html>
