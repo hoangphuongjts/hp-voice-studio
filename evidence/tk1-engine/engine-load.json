@@ -1,0 +1,5 @@
+{
+  "precision": "fp32",
+  "load_seconds": 8.1,
+  "sample_rate": 48000
+}

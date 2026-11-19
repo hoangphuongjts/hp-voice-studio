@@ -1,0 +1,26 @@
+{
+  "cpu_model": "AMD EPYC 9D64 88-Core Processor",
+  "has_avx512_vnni": true,
+  "has_avx_vnni": false,
+  "vnni_source": "py-cpuinfo+/proc/cpuinfo",
+  "default_precision": "int8",
+  "precisions": {
+    "fp32": {
+      "load_seconds": 14.9,
+      "rtf_values": [
+        4.331,
+        3.348
+      ],
+      "rtf_mean": 3.84
+    },
+    "int8": {
+      "load_seconds": 7.1,
+      "rtf_values": [
+        2.305,
+        2.349
+      ],
+      "rtf_mean": 2.327
+    }
+  },
+  "weak_machine_advice": "RTF fp32 = 3.84 (> 1,5): máy yếu cho v3 Turbo. Đề xuất dùng v3 Nano cho bản nháp (nhẹ hơn, 24 kHz). Nano chưa có ở v1 — chỉ báo rõ ở đây, không tự chuyển engine."
+}

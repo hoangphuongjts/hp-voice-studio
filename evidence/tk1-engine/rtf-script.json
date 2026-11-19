@@ -1,0 +1,24 @@
+{
+  "cpu_model": "AMD EPYC 9D25 126-Core Processor",
+  "has_avx512_vnni": true,
+  "has_avx_vnni": true,
+  "vnni_source": "py-cpuinfo+/proc/cpuinfo",
+  "default_precision": "int8",
+  "text": "Xin chào, đây là HP Voice Studio. Giọng đọc tiếng Việt chạy hoàn toàn trên máy của bạn.",
+  "voice": "Hải Đăng",
+  "repeats": 1,
+  "precisions": {
+    "int8": {
+      "precision": "int8",
+      "load_seconds": 8.5,
+      "audio_seconds": 5.2,
+      "rtf_values": [
+        2.324
+      ],
+      "rtf_mean": 2.324,
+      "rtf_min": 2.324,
+      "rtf_max": 2.324,
+      "first_chunk_latency_s": 0.536
+    }
+  }
+}

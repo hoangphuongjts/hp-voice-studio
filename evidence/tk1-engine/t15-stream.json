@@ -1,0 +1,9 @@
+{
+  "precision": "fp32",
+  "num_chunks": 9,
+  "first_chunk_latency_s": 1.554,
+  "total_duration_s": 2.64,
+  "target_first_chunk_s": 0.5,
+  "target_met_on_this_vm": false,
+  "note": "Muc tieu <=500ms do lai tren may Windows that (C6)."
+}
