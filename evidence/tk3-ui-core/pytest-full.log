@@ -1,0 +1,10 @@
+........................................................................ [ 28%]
+........................................................................ [ 57%]
+........................................................................ [ 85%]
+....................................                                     [100%]
+=============================== warnings summary ===============================
+tests/test_api_features.py::test_srt_dub_route_vtt
+  /home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/numba/np/ufunc/dufunc.py:303: RuntimeWarning: invalid value encountered in cast
+    return super().__call__(*args, **kws)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

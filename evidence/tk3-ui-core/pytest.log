@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /home/hatch/workspace/hp-voice-studio
+configfile: pyproject.toml
+plugins: platformdirs-4.14.7, anyio-4.16.0
+collected 22 items
+
+tests/test_preview_cache.py ..........                                   [ 45%]
+tests/test_ui_shell.py ........                                          [ 81%]
+tests/test_ui_settings.py ....                                           [100%]
+
+============================== 22 passed in 1.19s ==============================
