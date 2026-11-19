@@ -1,0 +1,36 @@
+--- /health ---
+{"status":"starting","engine":"v3","v3_ready":false,"v4_configured":false,"version":"0.2.0-tk2","uptime_s":3.8}--- / (root) ---
+{"name":"HP Voice Studio","version":"0.2.0-tk2","docs":"/docs","health":"/health"}--- /v1/voices (nap model that) ---
+HTTP:200 time:5.422813s size:2212
+so_giong: 25
+--- /health sau khi nap model ---
+{"status":"ok","engine":"v3","v3_ready":true,"v4_configured":false,"version":"0.2.0-tk2","uptime_s":31.1}--- POST /v1/audio/speech that ---
+HTTP:200 time:4.205260s size:238124
+x-engine: v3
+x-duration-sec: 2.480
+content-type: audio/wav
+sample_rate=48000
+channels=1
+duration=2.480000
+--- POST /api/tts/generate that ---
+HTTP:200 time:2.137117s size:207404
+x-engine: v3
+x-duration-sec: 2.160
+x-job-id: 7e2836acff2d
+x-history-id: cb67df1008f9
+--- POST /api/tts/generate-with-subtitles that ---
+HTTP:200 time:2.142983s size:155834
+zip: ['audio.wav', 'subtitles.srt']
+1
+00:00:00,000 --> 00:00:00,971
+Xin chào các bạn.
+
+2
+00:00:01,029 --> 00:00:02,000
+Hôm nay trời đẹp.
+
+--- GET /api/history ---
+total: 3 total_bytes: 637572 voices: ['Hải Đăng', 'Mai Anh', 'Hải Đăng']
+--- run_server khi 8124 dang ban (fail-fast) ---
+Cổng 8124 trên 127.0.0.1 đã bị chiếm (có thể bởi HP Voice Studio (mặc định)) — HP Voice Studio KHÔNG khởi động để tránh gọi nhầm đích. Hãy dừng dịch vụ đang chiếm cổng, hoặc đổi `server.port` trong config.yaml rồi chạy lại. Server không tự nhảy sang cổng khác (SPEC §4).
+run_server_exit:2

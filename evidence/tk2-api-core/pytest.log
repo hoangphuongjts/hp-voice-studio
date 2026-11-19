@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /home/hatch/workspace/hp-voice-studio
+configfile: pyproject.toml
+plugins: platformdirs-4.14.7, anyio-4.16.0
+collected 56 items
+
+tests/test_queue.py ............                                         [ 21%]
+tests/test_history.py ...........                                        [ 41%]
+tests/test_api_tts.py ............                                       [ 62%]
+tests/test_api_voices.py .....                                           [ 71%]
+tests/test_api_jobs.py ....                                              [ 78%]
+tests/test_api_history.py ...                                            [ 83%]
+tests/test_api_settings.py ....                                          [ 91%]
+tests/test_api_limits.py ..                                              [ 94%]
+tests/test_api_dynamic_router.py ...                                     [100%]
+
+============================== 56 passed in 5.92s ==============================

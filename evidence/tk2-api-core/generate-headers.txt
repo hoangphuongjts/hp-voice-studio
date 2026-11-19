@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+date: Wed, 18 Nov 2026 22:14:22 GMT
+server: uvicorn
+x-engine: v3
+x-duration-sec: 2.160
+x-job-id: 7e2836acff2d
+x-history-id: cb67df1008f9
+content-length: 207404
+content-type: audio/wav
+
