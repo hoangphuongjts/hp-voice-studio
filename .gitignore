@@ -1,0 +1,46 @@
+# HP Voice Studio — .gitignore
+# Upstream VieNeu-TTS chỉ để tham khảo (clone chỉ đọc, không commit, không sửa)
+upstream-vieneu-tts/
+
+# Model + cache (tải về khi chạy, không commit)
+models/
+.hf_cache/
+*.onnx
+*.safetensors
+*.pt
+*.bin
+
+# Secrets — KHÔNG BAO GIỜ commit (key V4, key API LAN)
+secrets.json
+config.local.yaml
+.env
+
+# Output / dữ liệu người dùng
+outputs/
+history/
+*.wav
+*.mp3
+*.zip
+
+# Archive FFmpeg tải về làm bằng chứng (309 MB) — không commit; tải lại
+# từ URL đã ghim trong FFMPEG_DOWNLOADS (chỉ commit checksum + báo cáo)
+evidence/ffmpeg-download/*.tar.xz
+evidence/ffmpeg-download/*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# pip tmp (TK1 lesson: /tmp tmpfs 512 MB)
+.tmp-pip/

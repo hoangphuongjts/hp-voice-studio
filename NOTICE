@@ -1,0 +1,101 @@
+# NOTICE — HP Voice Studio
+
+HP Voice Studio
+Copyright 2026 HP Voice Studio
+Giấy phép của code HP Voice Studio: Apache License 2.0 (xem file `LICENSE`).
+
+File này ghi công các thành phần bên thứ ba mà HP Voice Studio sử dụng,
+theo SPEC v1.3 §13. Việc ghi công ở đây không làm thay đổi giấy phép của
+từng thành phần.
+
+## 1. VieNeu-TTS (engine, model, giọng preset v3 Turbo)
+
+- **Dự án:** VieNeu-TTS — Vietnamese text-to-speech.
+- **Tác giả / chủ sở hữu:** Phạm Nguyễn Ngọc Bảo (pnnbao-ump).
+- **Nguồn:** https://github.com/pnnbao97/VieNeu-TTS ·
+  Model: https://huggingface.co/pnnbao-ump/VieNeu-TTS-v3-Turbo
+- **Giấy phép:** Apache License 2.0 — áp dụng cho code SDK `vieneu`
+  (ghim `vieneu==3.8.4`), model v3 Turbo (`model.safetensors`, các bản
+  ONNX, config, tokenizer) và các tài sản giọng preset đi kèm
+  (`voices_v3_turbo.json`, 25 giọng preset), theo mục "Usage Rights &
+  Licensing FAQ" của model card (đọc ngày 19/11/2026).
+- **Lưu ý về giọng preset (SPEC §13.8 / TH-01):** model card đọc được ghi
+  cho SDK 3.7.1 (23 giọng); HP ghim SDK 3.8.4 với 25 giọng (mặc định
+  "Hải Đăng"). Hai giọng thêm chưa được xác nhận đích danh trong bản card
+  đã đọc. Bản v1 chỉ dùng cá nhân nên an toàn theo cả hai nguồn; trước khi
+  thương mại hoá phải xin xác nhận bằng văn bản từ tác giả về giấy phép
+  thương mại của đúng 25 giọng SDK 3.8.4 (mốc kích hoạt §9.2 SPEC).
+- **Không phân phối lại:** file `voices.json` cũ (CC BY-NC 4.0) và bản
+  GGUF Q4 (CC BY-NC 4.0) — HP không dùng, không phân phối lại hai tài sản này.
+- HP Voice Studio **không fork, không copy code** của CIT Voice Studio;
+  CIT chỉ là tài liệu tham khảo tính năng/cấu trúc (lệnh anh 03:31 19/11).
+  Logo/thương hiệu VieNeu và CIT không được sử dụng.
+
+## 2. Codec và thành phần bên thứ ba khác của model
+
+- **MOSS-Audio-Tokenizer-Nano** (OpenMOSS-Team) và các thành phần
+  third-party liệt kê trong model card VieNeu-TTS-v3-Turbo: Apache 2.0
+  (theo mục Third-party của model card). Giữ nguyên notice khi phân phối lại.
+
+## 3. FFmpeg — binary tải cài sau (LGPL v3) + dự phòng GPL v3
+
+- **Trạng thái (Q21 — ĐÃ CHỐT 04:35 19/11, ADR-07):** bộ cài HP Voice
+  Studio **KHÔNG đóng gói kèm binary FFmpeg** nên bộ cài giữ 100%
+  Apache 2.0. Binary FFmpeg được tải về máy người dùng lần đầu khi cần
+  xuất MP3 hoặc giải mã MP3/M4A cho clone giọng.
+- **Giấy phép của binary tải chính: GNU LESSER GENERAL PUBLIC LICENSE
+  v3 (LGPL v3)** — bản build LGPL tĩnh của BtbN/FFmpeg-Builds
+  (release `autobuild-2026-11-18-12-39`): file `LICENSE.txt` trong
+  archive là văn bản LGPL v3; đo thật bằng `ffmpeg -buildconf` trên
+  binary Linux 19/11/2026: không có `--enable-gpl` /
+  `--enable-nonfree` (`--enable-version3` chỉ nâng LGPL lên v3, không
+  phải GPL); có encoder `libmp3lame`. Binary Linux 142.747.536 byte,
+  SHA-256 ghim trong `src/hpvoice/audio/ffmpeg_manager.py` (bảng
+  `FFMPEG_DOWNLOADS`). Binary Windows (171.850.772 byte archive) chỉ
+  đo checksum — chưa chạy thật trên Windows (C22).
+- **Dự phòng cũ — binary imageio-ffmpeg (GPL v3):** trên máy dev đã
+  `pip install -r requirements.txt`, `FFmpegManager` vẫn dùng được
+  binary đi kèm wheel `imageio-ffmpeg==0.8.1` khi chưa có binary LGPL
+  tải về. Binary này là **GNU General Public License v3 (GPL v3)** —
+  đo thật bằng `ffmpeg -buildconf` trên binary Linux 0.8.1:
+  `--enable-gpl --enable-version3 --enable-libx264 --enable-libx265`
+  (binary `ffmpeg-linux-x86_64-v9.0.2`, 172.692.552 byte, SHA-256 ghim
+  trong `src/hpvoice/audio/ffmpeg_manager.py`, đo ngày 19/11/2026).
+  Binary này **không có trong bộ cài .exe** (bộ lọc trong
+  `packaging/windows/hp-voice-studio.spec` loại bỏ mọi binary
+  imageio-ffmpeg khỏi bộ cài).
+- **Source offer (theo GPL v3 §6, cho binary imageio dự phòng):** mã
+  nguồn FFmpeg tương ứng với binary tải sau có tại:
+  - Mã nguồn FFmpeg: https://ffmpeg.org/download.html ·
+    kho mã nguồn: https://git.ffmpeg.org/ffmpeg.git
+  - Build BtbN (nguồn binary LGPL tải chính và nguồn binary của
+    imageio-ffmpeg trên Linux/Windows):
+    https://github.com/BtbN/FFmpeg-Builds
+  - Mã nguồn của gói wrapper `imageio-ffmpeg`:
+    https://github.com/imageio/imageio-ffmpeg
+  - Người dùng cũng có thể yêu cầu bản sao mã nguồn FFmpeg tương ứng bằng
+    văn bản từ HP Voice Studio; yêu cầu này có hiệu lực ít nhất 3 năm kể
+    từ lần tải binary (theo GPL v3 §6b, "written offer").
+- **Phạm vi nghĩa vụ GPL:** nghĩa vụ GPL v3 chỉ áp dụng cho **binary
+  imageio-ffmpeg dự phòng** và việc phân phối lại nó; binary tải chính
+  là LGPL v3; code HP Voice Studio vẫn Apache 2.0 và không bị "nhiễm"
+  GPL nhờ việc tách binary khỏi bộ cài (Q21).
+
+## 4. Cloud API VieNeu v4 (tùy chọn, độc quyền, trả phí)
+
+- Engine V4 và kho 707 giọng V4 là tài sản **độc quyền của VieNeu**,
+  chỉ dùng qua Cloud API trả phí (`https://api.vieneu.io/api/v1`).
+  V4 **không chạy local được**, không clone offline qua API.
+- Key V4 do người dùng tự nhập trong Cài đặt, lưu qua `keyring`
+  (Windows: DPAPI/Credential Manager), không hardcode, không commit.
+- Chi tiết tính phí: xem `docs/v4-billing.md`.
+
+## 5. Giọng clone của người dùng
+
+- Giọng clone chỉ được tạo từ giọng của chính người dùng hoặc giọng đã
+  được chủ giọng đồng ý, kèm cam kết bắt buộc trong app (SPEC TH-04/TH-17).
+- Giọng nói là dữ liệu cá nhân theo Nghị định 13/2023; nội dung mô phỏng
+  giọng người thật khi đăng công khai phải ghi rõ "giọng đọc được tạo
+  bằng AI" (Nghị định 147/2024).
+- Giọng clone lưu local, không đồng bộ cloud, không xuất file ref gốc.
+  Gỡ giọng khi bị khiếu nại: tab Giọng của tôi → Xoá (kèm lý do bắt buộc).

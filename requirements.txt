@@ -1,0 +1,44 @@
+# HP Voice Studio — requirements (ghim version đầy đủ, TK1.1)
+# Cài: TMPDIR=$PWD/.tmp-pip .venv/bin/pip install --no-cache-dir -r requirements.txt
+# (dùng TMPDIR dưới workspace vì /tmp tmpfs 512 MB — xem T1-REPORT.md)
+# Python 3.12 (khớp .python-version của upstream)
+
+# Engine TTS (SDK chính, Apache 2.0)
+vieneu==3.8.4
+numpy==2.5.5
+onnxruntime==1.32.0
+soundfile==0.14.0
+# librosa ĐÃ GỠ (19/11, giảm kích thước gói Q2 — xem
+# evidence/size-reduction/SIZE-REDUCTION-REPORT.md): SDK v3 Turbo không cần
+# librosa (các chỗ dùng trong SDK đều có fallback soundfile+soxr/numpy),
+# time-stretch mặc định đã chuyển sang FFmpeg atempo (post.py). librosa chỉ
+# còn là dự phòng tùy chọn nếu máy dev tự cài thêm — code bắt ImportError
+# thành StretchUnavailableError rõ ràng, không crash.
+
+# API local
+fastapi==0.165.0
+uvicorn==0.54.0
+pydantic==2.14.3
+httpx==0.28.1
+requests==2.34.2
+
+# FFmpeg dự phòng cũ — binary GPL v3 đi kèm wheel, CHỈ dùng làm dự phòng
+# trên máy dev (FFmpegManager.locate bước 3), KHÔNG phải nguồn tải chính
+# (nguồn tải chính là BtbN LGPL qua FFmpegManager.download()) và KHÔNG
+# collect binary vào bộ cài (Q21 — ĐÃ CHỐT 04:35 19/11: FFmpeg tải cài sau,
+# bộ cài giữ 100% Apache 2.0; xem TK4.9 + ADR-07)
+imageio-ffmpeg==0.8.1
+
+# Key store (V4 key / LAN key) + phát hiện CPU
+keyring==25.7.0
+py-cpuinfo==9.0.0
+SecretStorage==3.5.0; sys_platform == 'linux'
+jeepney==0.9.0; sys_platform == 'linux'
+pywin32-ctypes; sys_platform == 'win32'  # ghim version sau khi kiểm chứng trên Windows (TK4.1)
+
+# Đọc file (PDF/DOCX)
+PyMuPDF==1.28.2
+python-docx==1.2.0
+
+# Test
+pytest==9.2.0

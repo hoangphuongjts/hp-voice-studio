@@ -1,0 +1,47 @@
+# HP Voice Studio — config (mẫu; đường dẫn mặc định theo OS, không hardcode máy)
+# Chép thành config.yaml rồi sửa theo máy của mình. Key KHÔNG ghi vào file này
+# (key V4/key LAN lưu qua keyring — xem TH-05/Y12).
+app:
+  name: "HP Voice Studio"
+  language: "vi"
+  shell_backend: "pywebview"  # vỏ desktop (pywebview/WebView2); chốt ở Bước 3/4 (Q20)
+server:
+  host: "127.0.0.1"      # mặc định loopback; "0.0.0.0" chỉ khi bật LAN trong Cài đặt
+  port: 8124             # mặc định mới — 8123 đã có chủ (server TTS MODOLIVIO); xem bảng cổng §4 SPEC
+  lan_enabled: false     # opt-in; mở LAN ở v1 KHÔNG bắt buộc key (xem §9.3 SPEC)
+  # api_key_file: secrets.json (không ghi key vào file này)
+  # Khởi động: bind 8124 thất bại → fail-fast + báo rõ (không tự nhảy cổng); xem §4 SPEC
+engine:
+  default: "v3"          # "v3" | "v4"
+  v3:
+    backbone_repo: "pnnbao-ump/VieNeu-TTS-v3-Turbo"
+    precision: "auto"    # "auto" (theo CPU: VNNI→int8, không→fp32) | "fp32" | "int8"
+    threads: 0           # 0 = mặc định SDK
+    max_batch_size: 32
+    model_dir: ""        # trống = cache HF mặc định; đặt đường dẫn để đóng gói sẵn model
+  v4:
+    base_url: "https://api.vieneu.io/api/v1"
+    model: "v4"
+    fallback_to_v3: true
+    fallback_voice: "map"  # "map" (ánh xạ V4→V3 theo docs/voice-fallback-map.md) | "default" (về "Hải Đăng") | "fail" (không fallback giọng)
+    # Idempotency: V4Engine sinh Idempotency-Key = UUID theo HP job id cho mọi POST /v1/tts (lưu cùng job); KHÔNG retry POST /v1/audio/speech sau timeout — xem TH-05 SPEC
+    warn_chars: 100000   # ngưỡng cảnh báo ký tự/phiên (người dùng đổi được) — tính bằng KÝ TỰ, phí thật = ký tự (tối thiểu 50/request) × billingMultiplier × globalMultiplier (xem TH-05 SPEC)
+    timeout_sec: 60
+    max_retries: 1       # chỉ retry lỗi 5xx/timeout TRÊN ĐƯỜNG ASYNC CÓ Idempotency-Key; không retry 4xx; không retry POST /v1/audio/speech sau timeout
+audio:
+  default_voice: "Hải Đăng"
+  default_speed: 1.0     # 0.75–1.50
+  default_format: "wav"  # "wav" | "mp3"
+  mp3_encoder: "ffmpeg"  # [Q21 — ĐÃ CHỐT 04:35 19/11] FFmpeg TẢI CÀI SAU lần đầu chạy, không đóng gói kèm; không có FFmpeg → chỉ xuất WAV
+  preview_sample: "Xin chào, đây là giọng đọc mẫu của HP Voice Studio."  # ≤ 60 ký tự (Q12 SPEC)
+  sample_rate_v3: 48000
+api:
+  max_text_chars: 20000  # mỗi request TTS; vượt → 400 (như upstream)
+  max_batch_items: 500   # số tạm chờ đo RAM (TK2.6)
+  max_queue_jobs: 20     # hàng đợi đầy → 429 (Q16 — ĐÃ CHỐT 04:32 19/11)
+storage:
+  output_dir: ""         # trống = thư mục mặc định theo OS (xem README)
+  history_dir: ""        # trống = <data>/history
+  voices_file: ""        # trống = <data>/voices.json (giọng clone — KHÔNG ghi vào package)
+  dict_file: ""          # trống = <data>/pronunciation-dict.json
+  max_history_gb: 5      # chặn tạo mới + báo rõ khi vượt (TH-16)
