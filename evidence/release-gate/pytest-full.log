@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /home/hatch/workspace/hp-voice-studio
+configfile: pyproject.toml
+plugins: platformdirs-4.14.7, anyio-4.16.0
+collected 291 items
+
+tests/test_api_dynamic_router.py ...                                     [  1%]
+tests/test_api_features.py ...........                                   [  4%]
+tests/test_api_history.py ...                                            [  5%]
+tests/test_api_jobs.py ....                                              [  7%]
+tests/test_api_limits.py ..                                              [  7%]
+tests/test_api_settings.py ....                                          [  9%]
+tests/test_api_tts.py ............                                       [ 13%]
+tests/test_api_voices.py .....                                           [ 15%]
+tests/test_api_voices_clone.py .............                             [ 19%]
+tests/test_audio_post.py ..........                                      [ 23%]
+tests/test_batch.py ........                                             [ 25%]
+tests/test_conversation.py ....                                          [ 27%]
+tests/test_cpu.py .......                                                [ 29%]
+tests/test_ffmpeg_manager.py ...........                                 [ 33%]
+tests/test_file_readers.py .......                                       [ 35%]
+tests/test_history.py ...........                                        [ 39%]
+tests/test_model_download.py .....                                       [ 41%]
+tests/test_normalizer.py ........                                        [ 43%]
+tests/test_packaging.py .......                                          [ 46%]
+tests/test_preview_cache.py ..........                                   [ 49%]
+tests/test_pron_dict.py .........                                        [ 52%]
+tests/test_queue.py ............                                         [ 57%]
+tests/test_shell.py .......                                              [ 59%]
+tests/test_srt_dubber.py ...........                                     [ 63%]
+tests/test_srt_writer.py ...........                                     [ 67%]
+tests/test_text_preprocess.py ................                           [ 72%]
+tests/test_ui_player.py ....                                             [ 73%]
+tests/test_ui_settings.py ....                                           [ 75%]
+tests/test_ui_shell.py ........                                          [ 78%]
+tests/test_ui_tabs.py .............                                      [ 82%]
+tests/test_unicode_paths.py .....                                        [ 84%]
+tests/test_v3_engine.py .........                                        [ 87%]
+tests/test_v4_engine.py ......................                           [ 94%]
+tests/test_voice_store.py .........                                      [ 97%]
+tests/test_worker.py ......                                              [100%]
+
+=============================== warnings summary ===============================
+tests/test_api_features.py::test_srt_dub_route_vtt
+  /home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/numba/np/ufunc/dufunc.py:303: RuntimeWarning: invalid value encountered in cast
+    return super().__call__(*args, **kws)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 291 passed, 1 warning in 279.57s (0:04:39) ==================
+PYTEST_EXIT=0

@@ -1,0 +1,65 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /home/hatch/workspace/hp-voice-studio
+configfile: pyproject.toml
+plugins: platformdirs-4.14.7, anyio-4.16.0
+collected 291 items
+
+tests/test_api_dynamic_router.py ...                                     [  1%]
+tests/test_api_features.py ...........                                   [  4%]
+tests/test_api_history.py ...                                            [  5%]
+tests/test_api_jobs.py ....                                              [  7%]
+tests/test_api_limits.py ..                                              [  7%]
+tests/test_api_settings.py ....                                          [  9%]
+tests/test_api_tts.py ............                                       [ 13%]
+tests/test_api_voices.py .....                                           [ 15%]
+tests/test_api_voices_clone.py .............                             [ 19%]
+tests/test_audio_post.py ..........                                      [ 23%]
+tests/test_batch.py ........                                             [ 25%]
+tests/test_conversation.py ....                                          [ 27%]
+tests/test_cpu.py .......                                                [ 29%]
+tests/test_ffmpeg_manager.py ...........                                 [ 33%]
+tests/test_file_readers.py .......                                       [ 35%]
+tests/test_history.py ...........                                        [ 39%]
+tests/test_model_download.py .....                                       [ 41%]
+tests/test_normalizer.py ........                                        [ 43%]
+tests/test_packaging.py ...F...                                          [ 46%]
+tests/test_preview_cache.py ..........                                   [ 49%]
+tests/test_pron_dict.py .........                                        [ 52%]
+tests/test_queue.py ............                                         [ 57%]
+tests/test_shell.py .......                                              [ 59%]
+tests/test_srt_dubber.py ...........                                     [ 63%]
+tests/test_srt_writer.py ...........                                     [ 67%]
+tests/test_text_preprocess.py ................                           [ 72%]
+tests/test_ui_player.py ....                                             [ 73%]
+tests/test_ui_settings.py ....                                           [ 75%]
+tests/test_ui_shell.py ........                                          [ 78%]
+tests/test_ui_tabs.py .............                                      [ 82%]
+tests/test_unicode_paths.py .....                                        [ 84%]
+tests/test_v3_engine.py .........                                        [ 87%]
+tests/test_v4_engine.py ......................                           [ 94%]
+tests/test_voice_store.py .........                                      [ 97%]
+tests/test_worker.py ......                                              [100%]
+
+=================================== FAILURES ===================================
+_______________ test_run_server_version_va_check_khong_nap_model _______________
+
+    def test_run_server_version_va_check_khong_nap_model():
+        """TK4.2: --version/--check chạy thật, thoát 0, không nạp model."""
+        for flag in ("--version", "--check"):
+            result = subprocess.run(
+                [sys.executable, str(RUN_SERVER), flag],
+                capture_output=True, text=True, timeout=60, cwd=str(REPO_DIR),
+            )
+            assert result.returncode == 0, f"{flag} thoát {result.returncode}: {result.stderr}"
+            assert "HP Voice Studio" in result.stdout
+>           assert "0.2.0" in result.stdout, f"{flag} phải in version thật, thấy: {result.stdout}"
+E           AssertionError: --version phải in version thật, thấy: HP Voice Studio 0.1.0
+E             
+E           assert '0.2.0' in 'HP Voice Studio 0.1.0\n'
+E            +  where 'HP Voice Studio 0.1.0\n' = CompletedProcess(args=['/home/hatch/workspace/hp-voice-studio/.venv/bin/python', '/home/hatch/workspace/hp-voice-studio/scripts/run_server.py', '--version'], returncode=0, stdout='HP Voice Studio 0.1.0\n', stderr='').stdout
+
+tests/test_packaging.py:92: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_packaging.py::test_run_server_version_va_check_khong_nap_model
+================== 1 failed, 290 passed in 175.02s (0:02:55) ===================

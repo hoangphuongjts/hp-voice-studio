@@ -1,0 +1,45 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /home/hatch/workspace/hp-voice-studio
+configfile: pyproject.toml
+plugins: platformdirs-4.14.7, anyio-4.16.0
+collected 301 items
+
+tests/test_api_dynamic_router.py ...                                     [  0%]
+tests/test_api_features.py ...........                                   [  4%]
+tests/test_api_history.py ...                                            [  5%]
+tests/test_api_jobs.py ....                                              [  6%]
+tests/test_api_limits.py ..                                              [  7%]
+tests/test_api_settings.py ....                                          [  8%]
+tests/test_api_tts.py ............                                       [ 12%]
+tests/test_api_voices.py .....                                           [ 14%]
+tests/test_api_voices_clone.py .............                             [ 18%]
+tests/test_audio_post.py ..........                                      [ 22%]
+tests/test_batch.py ........                                             [ 24%]
+tests/test_conversation.py ....                                          [ 26%]
+tests/test_cpu.py .......                                                [ 28%]
+tests/test_ffmpeg_download_live.py s                                     [ 28%]
+tests/test_ffmpeg_manager.py ....................                        [ 35%]
+tests/test_file_readers.py .......                                       [ 37%]
+tests/test_history.py ...........                                        [ 41%]
+tests/test_model_download.py .....                                       [ 43%]
+tests/test_normalizer.py ........                                        [ 45%]
+tests/test_packaging.py .......                                          [ 48%]
+tests/test_preview_cache.py ..........                                   [ 51%]
+tests/test_pron_dict.py .........                                        [ 54%]
+tests/test_queue.py ............                                         [ 58%]
+tests/test_shell.py .......                                              [ 60%]
+tests/test_srt_dubber.py ...........                                     [ 64%]
+tests/test_srt_writer.py ...........                                     [ 68%]
+tests/test_text_preprocess.py ................                           [ 73%]
+tests/test_ui_player.py ....                                             [ 74%]
+tests/test_ui_settings.py ....                                           [ 76%]
+tests/test_ui_shell.py ........                                          [ 78%]
+tests/test_ui_tabs.py .............                                      [ 83%]
+tests/test_unicode_paths.py .....                                        [ 84%]
+tests/test_v3_engine.py .........                                        [ 87%]
+tests/test_v4_engine.py ......................                           [ 95%]
+tests/test_voice_store.py .........                                      [ 98%]
+tests/test_worker.py ......                                              [100%]
+
+================== 300 passed, 1 skipped in 168.05s (0:02:48) ==================
