@@ -1,0 +1,62 @@
+{
+  "pause_tone": {
+    "file": "t31-pause-tone.wav",
+    "expected_s": 2.0,
+    "silences_detected": [
+      [
+        1.0,
+        3.000021
+      ]
+    ],
+    "longest_silence_s": 2.0,
+    "error_s": 0.0,
+    "pass_pm_0_3s": true
+  },
+  "pause_sample": {
+    "file": "t31-pause-sample.wav",
+    "expected_s": 2.0,
+    "silences_detected": [
+      [
+        2.060104,
+        3.984833
+      ],
+      [
+        6.087063,
+        6.2
+      ]
+    ],
+    "longest_silence_s": 1.925,
+    "error_s": -0.075,
+    "pass_pm_0_3s": true
+  },
+  "srt_cues": {
+    "file": "t31-srt-audio.wav",
+    "gaps": [
+      "para",
+      "para"
+    ],
+    "cues": [
+      {
+        "sentence": "Câu thứ nhất rất hay.",
+        "srt_start_s": 0.0,
+        "detected_onset_s": 0.0,
+        "error_s": 0.0
+      },
+      {
+        "sentence": "Câu thứ hai cũng rất hay.",
+        "srt_start_s": 1.7,
+        "detected_onset_s": 1.7,
+        "error_s": 0.0
+      },
+      {
+        "sentence": "Câu thứ ba cũng rất hay.",
+        "srt_start_s": 3.4,
+        "detected_onset_s": 3.4,
+        "error_s": 0.0
+      }
+    ],
+    "max_abs_error_first_10_s": 0.0,
+    "max_abs_error_last_sentence_s": 0.0,
+    "pass_pm_0_3s_first_10": true
+  }
+}

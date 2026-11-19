@@ -1,0 +1,52 @@
+{
+  "source": "/home/hatch/workspace/hp-voice-studio/evidence/t1-first-wav/t1-first-wav-hai-dang.wav",
+  "input": {
+    "duration_s": 4.88,
+    "rms": 0.10135,
+    "peak": 0.8654
+  },
+  "measurements": [
+    {
+      "engine": "librosa",
+      "rate": 0.75,
+      "rtf": 0.022,
+      "proc_s": 0.11,
+      "duration_ratio": 1.333,
+      "out_duration_s": 6.507,
+      "out_rms": 0.06921,
+      "out_peak": 0.6988
+    },
+    {
+      "engine": "atempo",
+      "rate": 0.75,
+      "rtf": 0.085,
+      "proc_s": 0.416,
+      "duration_ratio": 1.329,
+      "ffprobe_duration_s": 6.484,
+      "out_duration_s": 6.484,
+      "out_rms": 0.10191,
+      "out_peak": 0.8651
+    },
+    {
+      "engine": "librosa",
+      "rate": 1.5,
+      "rtf": 0.01,
+      "proc_s": 0.047,
+      "duration_ratio": 0.667,
+      "out_duration_s": 3.253,
+      "out_rms": 0.06489,
+      "out_peak": 0.4811
+    },
+    {
+      "engine": "atempo",
+      "rate": 1.5,
+      "rtf": 0.018,
+      "proc_s": 0.088,
+      "duration_ratio": 0.667,
+      "ffprobe_duration_s": 3.256,
+      "out_duration_s": 3.256,
+      "out_rms": 0.09938,
+      "out_peak": 0.8533
+    }
+  ]
+}
