@@ -1,0 +1,6 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+init: 9.4s backend=onnx
+lan 1: tao 13.93s / audio 4.88s -> RTF 2.855
+lan 2: tao 9.47s / audio 4.72s -> RTF 2.006
+lan 3: tao 9.19s / audio 4.96s -> RTF 1.852
+WARM DONE

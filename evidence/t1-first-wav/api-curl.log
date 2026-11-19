@@ -1,0 +1,18 @@
+=== GET /health
+HTTP/1.1 200 OK
+date: Wed, 18 Nov 2026 21:23:05 GMT
+server: uvicorn
+content-length: 104
+content-type: application/json
+
+{"status":"ok","engine":"v3","v3_ready":true,"v4_configured":false,"version":"0.1.0-t1","uptime_s":40.4}
+=== GET /v1/voices (count only)
+25 voices
+=== POST /v1/audio/speech (voice la -> 400)
+HTTP/1.1 400 Bad Request
+date: Wed, 18 Nov 2026 21:23:05 GMT
+server: uvicorn
+content-length: 52
+content-type: application/json
+
+{"detail":"voice khong ton tai: Khong Co Giong Nay"}

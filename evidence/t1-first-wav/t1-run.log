@@ -1,0 +1,39 @@
+HF cache truoc khi chay: 1.1G	/home/hatch/.cache/huggingface
+Khoi tao Vieneu() [v3turbo, mac dinh fp32, ONNX/CPU] ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Khoi tao xong sau 236.4s (backend=onnx, sample_rate=48000)
+So giong preset: 25
+  - ⭐ Adam bựa — Nam · Bắc · Phong cách tự nhiên | id=Adam bựa
+  - ⭐ Trúc Ly — Nữ · Bắc · Phong cách tự nhiên | id=Trúc Ly
+  - ⭐ Thiện Minh — Nam · Bắc · Phong cách kể chuyện | id=Thiện Minh
+  - ⭐ Mai Anh — Nữ · Bắc · Phong cách tin tức | id=Mai Anh
+  - ⭐ Hải Đăng — Nam · Bắc · Phong cách tự nhiên | id=Hải Đăng
+  - ⭐ Thùy Dung — Nữ · Nam · Phong cách tin tức | id=Thùy Dung
+  - ⭐ Thiền Tâm Đức — Nam · Bắc · Phong cách kể chuyện | id=Thiền Tâm Đức
+  - ⭐ Ngọc Huyền — Nữ · Bắc · Giọng đọc tự nhiên | id=Ngọc Huyền
+  - ⭐ Quang Sơn — Nam · Trung · Phong cách tự nhiên | id=Quang Sơn
+  - ⭐ Ngọc Trân — Nữ · Trung · Phong cách tự nhiên | id=Ngọc Trân
+  - Minh Đức — Nam · Bắc · Phong cách tin tức | id=Minh Đức
+  - Phạm Tuyên — Nam · Bắc · Phong cách tự nhiên | id=Phạm Tuyên
+  - Thái Sơn — Nam · Nam · Phong cách kể chuyện | id=Thái Sơn
+  - Xuân Vĩnh — Nam · Bắc · Phong cách tự nhiên | id=Xuân Vĩnh
+  - Thanh Bình — Nam · Bắc · Phong cách kể chuyện | id=Thanh Bình
+  - Ngọc Linh — Nữ · Bắc · Phong cách kể chuyện | id=Ngọc Linh
+  - Đoan Trang — Nữ · Bắc · Phong cách tự nhiên | id=Đoan Trang
+  - Thục Đoan — Nữ · Nam · Phong cách kể chuyện | id=Thục Đoan
+  - Minh Triết — Nam · Nam · Phong cách tin tức | id=Minh Triết
+  - Mỹ Duyên — Nữ · Nam · Phong cách đọc truyện | id=Mỹ Duyên
+  - Quỳnh Anh — Nữ · Bắc · Phong cách đọc truyện | id=Quỳnh Anh
+  - Đức Trí — Nam · Nam · Phong cách đọc truyện | id=Đức Trí
+  - Kim Thanh — Nữ · Nam · Phong cách đọc truyện | id=Kim Thanh
+  - Adam — Nam · Nam · Giọng đọc tự nhiên | id=Adam
+  - Quốc Tuấn — Nam · Bắc · Phong cách tự nhiên | id=Quốc Tuấn
+Giong mac dinh "Hải Đăng" co trong preset: True
+Tong hop: "Xin chào, đây là HP Voice Studio. Giọng đọc tiếng Việt chạy hoàn toàn trên máy của bạn." (voice=Hải Đăng) ...
+WAV: /home/hatch/workspace/hp-voice-studio/evidence/t1-first-wav/t1-first-wav-hai-dang.wav
+  so mau: 234240, sample_rate: 48000
+  do dai audio: 4.88s
+  thoi gian tao (infer): 10.09s
+  RTF = 10.09 / 4.88 = 2.068
+HF cache sau khi chay: 1.6G	/home/hatch/.cache/huggingface
+T1 DONE
