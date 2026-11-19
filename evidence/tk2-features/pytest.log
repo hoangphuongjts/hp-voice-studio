@@ -1,0 +1,29 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /home/hatch/workspace/hp-voice-studio
+configfile: pyproject.toml
+plugins: platformdirs-4.14.7, anyio-4.16.0
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+collected 63 items
+
+tests/test_v4_engine.py ......................
+tests/test_conversation.py ....
+tests/test_srt_dubber.py ..........
+[ĐO] parse 1000 cue SRT: 0.006 s
+.
+tests/test_batch.py ......
+[ĐO] batch 100 mục: 1.87 s, peak RSS tuyệt đối 314.9 MB (tăng 0.0 MB trong batch)
+.
+[ĐO] batch 500 mục: 8.71 s (17 ms/mục), peak RSS tuyệt đối 314.9 MB (tăng 0.0 MB trong batch)
+.
+tests/test_file_readers.py Consider using the pymupdf_layout package for a greatly improved page layout analysis.
+.......
+tests/test_api_features.py ...........
+
+=============================== warnings summary ===============================
+tests/test_srt_dubber.py::test_dub_v4_fallback_to_v3_via_router
+  /home/hatch/workspace/hp-voice-studio/.venv/lib/python3.12/site-packages/numba/np/ufunc/dufunc.py:303: RuntimeWarning: invalid value encountered in cast
+    return super().__call__(*args, **kws)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 63 passed, 1 warning in 14.61s ========================
